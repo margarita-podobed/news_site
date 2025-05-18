@@ -1,0 +1,135 @@
+.page {
+  min-height: calc(100vh - 4.5rem - 3.75rem);
+  padding: 2rem 0;
+}
+
+#panel-charts h1 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.stats {
+  display: flex;
+  gap: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.stat__label {
+  font-size: 1.3rem;
+  color: var(--c-meta);
+}
+
+.stat__value {
+  font-size: 1.7rem;
+  font-weight: 700;
+}
+
+.stat--red .stat__value {
+  color: var(--c-red);
+}
+
+.stat--blue .stat__value {
+  color: var(--c-blue);
+}
+
+.months-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  overflow: visible; 
+}
+
+.months-nav__list {
+  display: flex;
+  gap: 0.5rem;
+  list-style: none;
+  overflow-x: auto; 
+  scrollbar-width: none; 
+}
+
+.months-nav__list::-webkit-scrollbar {
+  display: none; 
+}
+
+.months-nav__arrow {
+  flex: 0 0 auto; 
+  background: #000;
+  border: none;
+  border-radius: 0.5rem;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.months-nav__arrow img {
+  width: 1rem;
+  height: 1rem;
+}
+.months-nav__arrow:hover {
+  opacity: 0.8;
+}
+.months-nav__arrow:focus {
+  outline: 3px solid var(--c-blue);
+  outline-offset: 2px;
+}
+
+.month-btn {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3rem;
+  background: var(--c-card);
+  border: none; 
+  border-radius: 0.625rem;
+  padding: 0 1.3rem;
+  cursor: pointer;
+  font: inherit;
+  white-space: nowrap;
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.month-btn[aria-current='true'] {
+  background: var(--c-bg);
+  box-shadow: inset 0 0 0 2px #000;
+  font-weight: 600;
+}
+
+.month-btn:hover,
+.month-btn[aria-current='true']:hover {
+  background: var(--c-hover);
+  color: #fff;
+}
+
+.month-btn:focus {
+  outline: 3px solid var(--c-blue);
+  outline-offset: 2px;
+}
+
+.chart-wrap {
+  overflow-x: auto; 
+  max-height: 20rem; 
+}
+
+#line-chart {
+  min-width: 800px; 
+  height: 20rem !important; 
+}
+
+@media (max-width: 600px) {
+  .months-nav__list {
+    overflow-x: hidden; 
+  }
+  .page {
+    padding-top: 0;
+  }
+}

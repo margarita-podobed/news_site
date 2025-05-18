@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>WorldTrends</title>
+    <meta
+      name="description"
+      content="Latest news and charts from around the world on WorldTrends"
+    />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/styleNews.css" />
+    <link rel="stylesheet" href="styles/styleCharts.css" />
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+    <script src="js/scriptNews.js" defer></script>
+    <script src="js/scriptCharts.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a href="#" class="brand">
+        <img
+          src="assets/icon/Logotype.svg"
+          alt="WorldTrends logo"
+          height="32"
+        />
+      </a>
+
+      <nav aria-label="Primary tabs" class="tabs" role="tablist">
+        <button
+          id="tab-charts"
+          class="tab"
+          role="tab"
+          aria-selected="false"
+          aria-controls="panel-charts"
+        >
+          Charts
+        </button>
+        <button
+          id="tab-news"
+          class="tab"
+          role="tab"
+          aria-selected="true"
+          aria-controls="panel-news"
+        >
+          News
+        </button>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section
+        id="panel-news"
+        class="page"
+        role="tabpanel"
+        aria-labelledby="tab-news"
+      >
+        <div class="news-grid">
+          <article>
+            <div id="featured-story" class="featured-story" tabindex="0">
+              <img
+                src="assets/img/trump.jpg"
+                alt="Top story hero"
+                class="featured-story__img"
+                loading="lazy"
+              />
+              <div class="featured-story__overlay">
+                <h1 class="featured-story__title"></h1>
+                <button class="featured-story__btn">
+                  Explore
+                  <img
+                    src="assets/icon/IconArrowRight.svg"
+                    alt="Explore"
+                    class="icon-arrow icon-arrow--dark"
+                    loading="lazy"
+                  />
+                </button>
+              </div>
+            </div>
+            <button class="featured-story__btn-mobile">
+              Explore
+              <img
+                src="assets\icon\IconArrowRightWhite.svg"
+                alt="Explore"
+                class="icon-arrow icon-arrow--light"
+                loading="lazy"
+              />
+            </button>
+          </article>
+
+          <aside class="top-stories" aria-labelledby="top-stories-title">
+            <h2 id="top-stories-title" class="visually-hidden">Top stories</h2>
+            <ul class="top-stories__list"></ul>
+          </aside>
+        </div>
+
+        <section class="latest-news" aria-labelledby="latest-title">
+          <h2 id="latest-title">Latest News</h2>
+          <div id="latest-cards" class="cards" aria-live="polite"></div>
+          <button id="btn-more" class="btn-more">Read more</button>
+        </section>
+      </section>
+
+      <section
+        id="panel-charts"
+        class="page"
+        role="tabpanel"
+        aria-labelledby="tab-charts"
+        hidden
+      >
+        <h1>Charts</h1>
+
+        <div class="stats">
+          <div class="stat stat--red">
+            <span class="stat__label">Chart 1</span>
+            <span id="stat1" class="stat__value">0 GB</span>
+          </div>
+          <div class="stat stat--blue">
+            <span class="stat__label">Chart 2</span>
+            <span id="stat2" class="stat__value">0 GB</span>
+          </div>
+        </div>
+
+        <div class="months-nav" role="group" aria-label="Choose month">
+          <button
+            id="month-prev"
+            class="months-nav__arrow"
+            aria-label="Previous month"
+            tabindex="0"
+          >
+            <img
+              src="assets/icon/IconArrowLeftWhite.svg"
+              alt=""
+              loading="lazy"
+            />
+          </button>
+          <ul id="months" class="months-nav__list"></ul>
+          <button
+            id="month-next"
+            class="months-nav__arrow"
+            aria-label="Next month"
+            tabindex="0"
+          >
+            <img
+              src="assets/icon/IconArrowRightWhite.svg"
+              alt=""
+              loading="lazy"
+            />
+          </button>
+        </div>
+
+        <div class="chart-wrap">
+          <canvas
+            id="line-chart"
+            role="img"
+            aria-label="Traffic charts for two data series"
+          ></canvas>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

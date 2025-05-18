@@ -1,0 +1,28 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --c-text: #1d1f21;
+  --c-muted: #525252;
+  --c-meta: #a2a2a2;
+  --c-red: #b0111c;
+  --c-blue: #0534b7;
+  --c-card: #ececee;
+  --c-hover: #133d95;
+  --radius: 0.8rem;
+  --font: 'Inter', system-ui, sans-serif;
+}
+body {
+  font-family: var(--font);
+  background: var(--c-bg);
+  color: var(--c-text);
+  line-height: 1.4;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
