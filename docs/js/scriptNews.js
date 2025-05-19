@@ -74,7 +74,7 @@ $(function() {
   function addCards(list) {
     list.forEach(post => {
       try {
-        const img = `https://picsum.photos/seed/${post.id}/490/280`;
+        const img = `https://picsum.photos/seed/${post.id}/490/280.jpg`;
         const $card = $(`
           <article class="card" tabindex="0">
             <img src="${img}"
