@@ -71,38 +71,37 @@ $(function() {
     }
   }
 
-  function addCards(list) {
-    list.forEach(post => {
-      try {
-        const img = `https://picsum.photos/seed/${post.id}/490/280.jpg`;
-        const $card = $(`
-          <article class="card" tabindex="0">
-            <img src="${img}"
-                 alt="${capitalize(post.title)}"
-                 loading="lazy">
-            <h3 class="card__title">
-              ${capitalize(post.title.slice(0,80))}
-            </h3>
-            <p class="card__summary">
-              ${capitalize(post.body.slice(0,90))}…
-            </p>
-            <p class="card__meta">1 day ago | Culture</p>
-          </article>
-        `).on('click keydown', e => {
-          if (e.type === 'click' || e.key === 'Enter') {
-            window.open(
-              `https://jsonplaceholder.typicode.com/posts/${post.id}`,
-              '_blank'
-            );
-          }
-        });
-        $cardsWrap.append($card);
-      } catch (err) {
-        console.error('Error adding card for post', post.id, err);
-      }
-    });
-  }
-
+function addCards(list) {
+  list.forEach(post => {
+    try {
+      const img = `https://picsum.photos/id/${post.id}/490/280.jpg`;
+      const $card = $(`
+        <article class="card" tabindex="0">
+          <img src="${img}"
+               alt="${capitalize(post.title)}"
+               loading="lazy">
+          <h3 class="card__title">
+            ${capitalize(post.title.slice(0,80))}
+          </h3>
+          <p class="card__summary">
+            ${capitalize(post.body.slice(0,90))}…
+          </p>
+          <p class="card__meta">1 day ago | Culture</p>
+        </article>
+      `).on('click keydown', e => {
+        if (e.type === 'click' || e.key === 'Enter') {
+          window.open(
+            `https://jsonplaceholder.typicode.com/posts/${post.id}`,
+            '_blank'
+          );
+        }
+      });
+      $cardsWrap.append($card);
+    } catch (err) {
+      console.error('Error adding card for post', post.id, err);
+    }
+  });
+}
   // Загрузка данных
   $.getJSON('https://jsonplaceholder.typicode.com/posts?_limit=40')
     .done(data => {
